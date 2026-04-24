@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { PostCard, type Post } from "../components/PostCard";
 import { apiFetch } from "../lib/api";
 
-function clientFilterPosts(posts: Post[], q: string): Post[] {
+function clientFilterPosts(posts: Post[], q1: string): Post[] {
+  const q = q1.toLowerCase()// Q4 searching problem solution
   let result: Post[] = [];
   for (let i = 0; i < posts.length; i++) {
     for (let j = 0; j < posts.length; j++) {

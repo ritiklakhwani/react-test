@@ -73,7 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const logout = useCallback(() => {
-    localStorage.removeItem("ch_token");
+    clearToken(); // Q1 same key shouldd be used in like api
     setUser(null);
     setTokenState(null);
   }, []);
